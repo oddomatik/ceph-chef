@@ -25,8 +25,8 @@ provisioner:
 suites:
 - name: default
   run_list:
-    - "recipe[ceph-chef::repo]"
-    - "recipe[ceph-chef]"
+    - "recipe[ceph::repo]"
+    - "recipe[ceph]"
   attributes: &defaults
     ceph:
       version: jewel
@@ -46,10 +46,10 @@ suites:
   attributes: *defaults
 - name: mon
   run_list:
-    - "recipe[ceph-chef::mon]"
-    - "recipe[ceph-chef::mon_start]"
-    - "recipe[ceph-chef::mon_bootstrap_peer_hint]"
-    - "recipe[ceph-chef::mon_keys]"
+    - "recipe[ceph::mon]"
+    - "recipe[ceph::mon_start]"
+    - "recipe[ceph::mon_bootstrap_peer_hint]"
+    - "recipe[ceph::mon_keys]"
   attributes: *defaults
 - name: mds
   run_list:
@@ -71,5 +71,5 @@ suites:
         - { device: "/dev/sdc" }
         - { device: "/dev/sdd" }
   run_list:
-    - recipe[ceph-chef::all_in_one]
+    - recipe[ceph::all_in_one]
     - recipe[ceph_test::cephfs]

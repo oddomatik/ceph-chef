@@ -25,7 +25,7 @@
 # NOTE: This recipe will create bootstrap keys for OSD, [MDS, RGW automatically]
 
 # Create/save/etc the bootstrap-osd key
-include_recipe 'ceph-chef::bootstrap_osd_key'
+include_recipe 'ceph::bootstrap_osd_key'
 
 # # IF the bootstrap key for bootstrap-rgw exists then save it so it's available if wanted later. All bootstrap
 # # keys are created during this recipe process!

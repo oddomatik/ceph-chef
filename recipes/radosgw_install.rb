@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-include_recipe 'ceph-chef'
+include_recipe 'ceph'
 
 node['ceph']['radosgw']['packages'].each do |pck|
   package pck
@@ -53,4 +53,4 @@ cookbook_file '/usr/local/bin/rgw_s3_api.py' do
   mode 0755
 end
 
-include_recipe 'ceph-chef::install'
+include_recipe 'ceph::install'

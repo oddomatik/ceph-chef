@@ -21,7 +21,7 @@
 
 # There are recipes here that help do the moving of the objects (future)
 
-include_recipe 'ceph-chef'
+include_recipe 'ceph'
 
 # Creates (sets) the specified erasure coding profile to be used by the pools
 node['ceph']['pools']['erasure_coding']['profiles'].each do |profile|

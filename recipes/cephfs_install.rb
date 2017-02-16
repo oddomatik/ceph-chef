@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-include_recipe 'ceph-chef'
+include_recipe 'ceph'
 
 node['ceph']['cephfs']['packages'].each do |pck|
   package pck

@@ -45,8 +45,8 @@
 # NOTE: Ceph Journal uuid type 45b0969e-9b03-4f30-b4c6-b4b80ceff106
 # NOTE: dmcrypt Ceph Journal uuid type 45b0969e-9b03-4f30-b4c6-5ec00ceff106
 
-include_recipe 'ceph-chef'
-include_recipe 'ceph-chef::osd_install'
+include_recipe 'ceph'
+include_recipe 'ceph::osd_install'
 
 # Disk utilities used
 package 'gdisk' do
@@ -95,7 +95,7 @@ if node['ceph']['version'] == 'hammer'
   end
 end
 
-include_recipe 'ceph-chef::bootstrap_osd_key'
+include_recipe 'ceph::bootstrap_osd_key'
 
 # Calling ceph-disk prepare is sufficient for deploying an OSD
 # After ceph-disk prepare finishes, the new device will be caught

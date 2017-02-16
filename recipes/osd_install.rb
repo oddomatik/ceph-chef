@@ -14,10 +14,10 @@
 # limitations under the License.
 #
 
-include_recipe 'ceph-chef'
+include_recipe 'ceph'
 
 node['ceph']['osd']['packages'].each do |pck|
   package pck
 end
 
-include_recipe 'ceph-chef::install'
+include_recipe 'ceph::install'
