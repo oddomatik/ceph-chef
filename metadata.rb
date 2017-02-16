@@ -1,4 +1,4 @@
-name 'ceph-chef'
+name 'ceph'
 maintainer 'Chris Jones'
 maintainer_email 'cjones303@bloomberg.net'
 license 'Apache v2.0'
