@@ -44,4 +44,4 @@ if node['ceph']['repo']['create']
   #  key node['ceph']['debian']['extras']['repository_key']
   #  only_if { node['ceph']['extras_repo'] }
   #end
-# end
+end
