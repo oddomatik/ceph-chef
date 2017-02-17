@@ -112,7 +112,7 @@ execute 'format ceph-mon-secret as keyring' do
   group node['ceph']['group']
   only_if { ceph_chef_mon_secret }
   not_if "test -f #{keyring}"
-  sensitive true if Chef::Resource::Execute.method_defined? :sensitive
+#  sensitive true if Chef::Resource::Execute.method_defined? :sensitive
 end
 
 # This should only run once to generate the mon key and then the command above should be executed on other nodes
@@ -124,7 +124,7 @@ execute 'generate ceph-mon-secret as keyring' do
   not_if { ceph_chef_mon_secret }
   not_if "test -f #{keyring}"
   notifies :create, 'ruby_block[save ceph_chef_mon_secret]', :immediately
-  sensitive true if Chef::Resource::Execute.method_defined? :sensitive
+#  sensitive true if Chef::Resource::Execute.method_defined? :sensitive
 end
 
 # Part of monitor-secret calls above - Also, you can set node['ceph']['monitor-secret'] = ceph_chef_keygen()
