@@ -37,13 +37,12 @@ directory '/etc/ceph' do
   not_if 'test -f /etc/ceph'
 end
 
-cookbook_file '/usr/bin/ceph-remove-clean' do
-  source 'ceph-remove-clean.yum' if node['platform'] != 'ubuntu'
-  source 'ceph-remove-clean.apt' if node['platform'] == 'ubuntu'
-  owner 'root'
-  group 'root'
-  mode '0755'
-end
+# cookbook_file '/usr/bin/ceph-remove-clean' do
+#   source 'ceph-remove-clean.yum' if node['platform'] != 'ubuntu'
+#   source 'ceph-remove-clean.apt' if node['platform'] == 'ubuntu'
+#   owner 'root'
+#   group 'root'
+#   mode '0755'
 
 template "/etc/ceph/#{node['ceph']['cluster']}.conf" do
   source 'ceph.conf.erb'
