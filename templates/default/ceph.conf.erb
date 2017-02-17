@@ -6,7 +6,7 @@
 
 [global]
   # This value must be set before the mon.rb recipe is called. Do this in your own recipe where you set your owner
-  # variables. For an example, see ceph/recipes/ceph-mon.rb
+  # variables. For an example, see ceph-chef/recipes/ceph-mon.rb
   fsid = <%= @fsid_secret %>
   keyring = /etc/ceph/$cluster.$name.keyring
   auth cluster required = cephx

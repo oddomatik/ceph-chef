@@ -1,12 +1,12 @@
 #
-# Cookbook Name:: ceph
+# Cookbook Name:: ceph-chef
 # Spec:: default
 #
 # Copyright (c) 2015, Bloomberg Finance L.P. All rights reserved
 
 require 'spec_helper'
 
-describe 'ceph::default' do
+describe 'ceph-chef::default' do
   context 'When all attributes are default, on an unspecified platform' do
     let(:chef_run) do
       runner = ChefSpec::ServerRunner.new

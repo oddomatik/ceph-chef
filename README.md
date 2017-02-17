@@ -1,6 +1,6 @@
 # Ceph-Chef Cookbook
 
-[![Join the chat at https://gitter.im/ceph/ceph](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ceph/ceph?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/ceph/ceph-chef](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ceph/ceph-chef?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![License](https://img.shields.io/badge/license-Apache_2-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
 ## DESCRIPTION
@@ -16,10 +16,10 @@ Also, you can look at **[https://github.com/bloomberg/chef-bcs](https://github.c
 
 Note: The documentation is a WIP along with a few other features. This repo is actively managed.  
 
-For help, use **[Gitter chat](https://gitter.im/ceph/ceph)**, **[mailing-list](mailto:ceph-users-join@lists.ceph.com)** or **[issues](https://github.com/ceph/ceph/issues)** here in this repo.
+For help, use **[Gitter chat](https://gitter.im/ceph/ceph-chef)**, **[mailing-list](mailto:ceph-users-join@lists.ceph.com)** or **[issues](https://github.com/ceph/ceph-chef/issues)** here in this repo.
 
 ### NOTE: Users of ceph-cookbook
-The original ceph-cookbook will remain and may continue to be updated (see that repo for specifics). We tried to use some of the interesting features of ceph-cookbook but we added a lot of enhancements and simplifications. Simply replacing ceph-cookbook with ceph will not work without a few modifications. Also, ceph only works with Chef 12.5+ and Hammer and higher. Nothing below the Hammer release of Ceph is supported in this repo. In addition, only **civitweb** is used going forward (not Apache).
+The original ceph-cookbook will remain and may continue to be updated (see that repo for specifics). We tried to use some of the interesting features of ceph-cookbook but we added a lot of enhancements and simplifications. Simply replacing ceph-cookbook with ceph-chef will not work without a few modifications. Also, ceph-chef only works with Chef 12.5+ and Hammer and higher. Nothing below the Hammer release of Ceph is supported in this repo. In addition, only **civitweb** is used going forward (not Apache).
 
 NOTE: The current LWRP are using the style prior to Chef version 12.5. There will a new release shortly that will support the now recommended way of handling custom resources. To make that change easier we will be using a helper cookbook called Poise. Using Poise makes creating custom resources and common services very simple.
 
@@ -109,7 +109,7 @@ Ceph monitor nodes should use the ceph-mon role.
 
 Includes:
 
-* ceph::default
+* ceph-chef::default
 
 ### Ceph Metadata Server
 
@@ -117,7 +117,7 @@ Ceph metadata server nodes should use the ceph-mds role.
 
 Includes:
 
-* ceph::default
+* ceph-chef::default
 
 ### Ceph OSD
 
@@ -125,7 +125,7 @@ Ceph OSD nodes should use the ceph-osd role
 
 Includes:
 
-* ceph::default
+* ceph-chef::default
 
 ### Ceph RADOS Gateway (RGW)
 

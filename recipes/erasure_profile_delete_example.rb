@@ -21,7 +21,7 @@
 
 # There are recipes here that help do the moving of the objects (future)
 
-include_recipe 'ceph'
+include_recipe 'ceph-chef'
 
 # Example use - Shows how to delete a given profile.
 

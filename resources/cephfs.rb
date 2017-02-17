@@ -23,6 +23,6 @@ attribute :cephfs_subdir, :kind_of => String, :default => '/'
 def initialize(*args)
   super
   @action = :mount
-  @run_context.include_recipe 'ceph'
-  @run_context.include_recipe 'ceph::cephfs_install'
+  @run_context.include_recipe 'ceph-chef'
+  @run_context.include_recipe 'ceph-chef::cephfs_install'
 end

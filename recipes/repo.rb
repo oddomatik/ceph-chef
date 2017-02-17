@@ -16,9 +16,9 @@
 
 case node['platform_family']
 when 'debian'
-  include_recipe 'ceph::apt'
+  include_recipe 'ceph-chef::apt'
 when 'rhel', 'suse', 'fedora'
-  include_recipe 'ceph::rpm'
+  include_recipe 'ceph-chef::rpm'
 else
   fail 'not supported'
 end

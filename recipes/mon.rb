@@ -42,8 +42,8 @@ include_recipe 'chef-sugar::default'
 
 node.default['ceph']['is_mon'] = true
 
-include_recipe 'ceph'
-include_recipe 'ceph::mon_install'
+include_recipe 'ceph-chef'
+include_recipe 'ceph-chef::mon_install'
 
 service_type = node['ceph']['mon']['init_style']
 
@@ -128,7 +128,7 @@ execute 'generate ceph-mon-secret as keyring' do
 end
 
 # Part of monitor-secret calls above - Also, you can set node['ceph']['monitor-secret'] = ceph_chef_keygen()
-# in a higher level recipe like the way ceph does it in ceph-mon.rb
+# in a higher level recipe like the way ceph-chef does it in ceph-mon.rb
 ruby_block 'save ceph_chef_mon_secret' do
   block do
     fetch = Mixlib::ShellOut.new("ceph-authtool #{keyring} --print-key --name=mon.")
@@ -141,7 +141,7 @@ ruby_block 'save ceph_chef_mon_secret' do
 end
 
 # For now, make all mon nodes admin nodes
-include_recipe 'ceph::admin_client'
+include_recipe 'ceph-chef::admin_client'
 
 # Add admin key to monitor key and put a copy in the /var/lib/ceph/mon/... area
 # Admin key is required on any host that may perform 'ceph' related calls such as 'ceph -s'

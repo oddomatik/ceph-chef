@@ -1,4 +1,4 @@
-ceph
+ceph-chef
 =========
 
 NOTE: You can find out how to use this cookbook and see how Bloomberg uses it at:

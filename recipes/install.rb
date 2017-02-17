@@ -1,6 +1,6 @@
 #
 # Author: Chris Jones <cjones303@bloomberg.net>
-# Cookbook: ceph
+# Cookbook: ceph-chef
 #
 # Copyright 2017, Bloomberg Finance L.P.
 #

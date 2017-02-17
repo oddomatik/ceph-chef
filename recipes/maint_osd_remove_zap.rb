@@ -1,6 +1,6 @@
 #
 # Author:: Chris Jones <cjones303@bloomberg.net>
-# Cookbook Name:: ceph
+# Cookbook Name:: ceph-chef
 #
 # Copyright 2017, Bloomberg Finance L.P.
 #
@@ -35,7 +35,7 @@ if node['ceph']['osd']['remove']
 
   devices = Hash[(0...devices.size).zip devices] unless devices.is_a? Hash
 
-  include_recipe 'ceph::osd_scrubbing_off'
+  include_recipe 'ceph-chef::osd_scrubbing_off'
 
   devices.each do |_index, osd_device|
     # Maybe put this section in provider
@@ -99,7 +99,7 @@ if node['ceph']['osd']['remove']
     end
   end
 
-  include_recipe 'ceph::osd_scrubbing_on'
+  include_recipe 'ceph-chef::osd_scrubbing_on'
 else
   Log.info("node['ceph']['osd']['remove'] empty")
 end

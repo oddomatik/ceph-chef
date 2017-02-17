@@ -19,8 +19,8 @@
 
 node.default['ceph']['is_radosgw'] = true
 
-include_recipe 'ceph'
-include_recipe 'ceph::radosgw_install'
+include_recipe 'ceph-chef'
+include_recipe 'ceph-chef::radosgw_install'
 
 if node['ceph']['version'] == 'hammer'
   directory '/var/log/radosgw' do
@@ -52,7 +52,7 @@ if node['ceph']['version'] == 'hammer'
 end
 
 # IF you want specific recipes for civetweb then put them in the recipe referenced here.
-include_recipe 'ceph::radosgw_civetweb'
+include_recipe 'ceph-chef::radosgw_civetweb'
 
 execute 'osd-create-key-mon-client-in-directory' do
   command lazy { "ceph-authtool /etc/ceph/#{node['ceph']['cluster']}.mon.keyring --create-keyring --name=mon. --add-key=#{ceph_chef_mon_secret} --cap mon 'allow *'" }
@@ -72,9 +72,9 @@ end
 # Portion above is the same for Federated and Non-Federated versions.
 
 if node['ceph']['pools']['radosgw']['federated_enable']
-  include_recipe 'ceph::radosgw_federated'
+  include_recipe 'ceph-chef::radosgw_federated'
 else
-  include_recipe 'ceph::radosgw_non_federated'
+  include_recipe 'ceph-chef::radosgw_non_federated'
 end
 
 # TODO: This block is only here as a reminder to update the optimal PG size later...

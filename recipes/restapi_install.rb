@@ -22,7 +22,7 @@
 #
 # JSON - Add the following HTTP_HEADER: "Accept: application/json" otherwise it returns plain text.
 
-include_recipe 'ceph'
+include_recipe 'ceph-chef'
 
 node['ceph']['restapi']['packages'].each do |pck|
   package pck

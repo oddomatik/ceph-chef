@@ -19,7 +19,7 @@
 
 node.default['ceph']['is_rest_api'] = true
 
-include_recipe 'ceph'
+include_recipe 'ceph-chef'
 
 service_type = node['ceph']['mon']['init_style']
 

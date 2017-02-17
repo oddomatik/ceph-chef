@@ -1,6 +1,6 @@
 #
 # Author: Chris Jones <cjones303@bloomberg.net>
-# Cookbook: ceph
+# Cookbook: ceph-chef
 #
 # Copyright 2017, Bloomberg Finance L.P.
 #
@@ -25,7 +25,7 @@ execute 'set selinux' do
   ignore_failure true
 end
 
-include_recipe 'ceph::fsid'
+include_recipe 'ceph-chef::fsid'
 
 # Main ceph configuration location
 # For Jewel and later Ceph uses a Ceph user so go ahead and create the conf directory and change ownership later...

@@ -1,4 +1,4 @@
-name 'ceph'
+name 'ceph-chef'
 maintainer 'Chris Jones'
 maintainer_email 'cjones303@bloomberg.net'
 license 'Apache v2.0'
@@ -17,5 +17,5 @@ supports 'ubuntu', '>= 14.04'
 supports 'redhat', '>= 7.1'
 supports 'centos', '>= 7.1'
 
-issues_url 'https://github.com/ceph/ceph/issues'
-source_url 'https://github.com/ceph/ceph'
+issues_url 'https://github.com/ceph/ceph-chef/issues'
+source_url 'https://github.com/ceph/ceph-chef'
